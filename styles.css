@@ -1,0 +1,86 @@
+/********************************** GENERAL **********************************/
+
+.output_inline {
+    display: inline;
+}
+
+.large {
+    margin-bottom:50px;
+    margin-top:50px;
+}
+
+/********************************** EX5.1 **********************************/
+
+fieldset#fs_ex5_1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-end;
+    width: 400px;
+}
+label.ex5_1_l {
+    width: 192px;
+}
+input.ex5_1_i {
+    width: 200px;
+}
+input.rad {
+    width:80px;
+}
+#sx {
+    width:400px;
+}
+
+/********************************** EX5.2 **********************************/
+
+fieldset#fs_ex5_2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    width: 615px;
+}
+label.ex5_2_l {
+    width:615px;
+}
+input.ex5_2_i {
+    width:75px;
+    margin-right: 5px;
+}
+
+/********************************** EX7.1 **********************************/
+
+#fs_ex7_1 {
+    width: 631px;
+}
+
+/********************************** EX7.2 **********************************/
+
+#fs_ex7_2 {
+    width: 1048px;
+}
+
+/********************************** EX7.3 **********************************/
+
+#fs_ex7_3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    width: 615px;
+}
+
+#fs_ex7_3 label {
+    width: 350px;
+}
+.tx {
+    width: 250px;
+}
+
+/********************************** EX8.1 **********************************/
+
+#fs_ex8_1 {
+    display: flex;
+    justify-content:space-evenly;
+    width: 220px;
+}
+#ex8_1_idx {
+    display:inline;
+}

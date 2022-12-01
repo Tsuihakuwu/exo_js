@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes exercices Javascript</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/ico" href="favicon.ico">
+</head>
+
+<body>
+    <h1>JS05</h1>
+    <br>
+    <form>
+        <fieldset id="fs_ex5_1">
+            <legend>Exercice 1 : Bienvenue</legend>
+            <label class="ex5_1_l">Votre prénom : </label><input type="text" id="ex5_1_prenom" name="ex5_1_prenom" placeholder="Justine" class="ex5_1_i"><br>
+            <label class="ex5_1_l">Votre nom : </label><input type="text" id="ex5_1_nom" name="ex5_1_nom" placeholder="Dumont" class="ex5_1_i"><br>
+            <div id="sx">Sexe :
+                <input type="radio" id="ex5_1_sx_h" name="sexe" value="masculin" class="rad"><label
+                    for="ex5_1_sx_h">Masculin</label>
+                <input type="radio" id="ex5_1_sx_f" name="sexe" value="feminin" checked class="rad"><label for="ex5_1_sx_f">Féminin</label>
+            </div>
+            <input type="button" value="Envoyer" id="sub" onclick="javascript:ex5_1()">
+        </fieldset>
+    </form>
+
+    <div id="rt5_1"></div>
+
+    <hr class="large">
+
+    <form>
+        <fieldset id="fs_ex5_2">
+            <legend>Exercice 2 : Les différents types de variables</legend>
+            <label class="ex5_2_l">La variable a contient la chaine de caractère "100"</label>
+            <input class="ex5_2_i" type="button" value="Tester" id="sub" onclick="javascript:ex5_2(1)">
+            <label class="ex5_2_l">La variable b contient le nombre entier <div id="ex5_2_entier">100</div></label>
+            <input class="ex5_2_i" type="button" value="Tester" id="sub" onclick="javascript:ex5_2(2)">
+            <input class="ex5_2_i" type="button" value="-1" id="sub" onclick="javascript:ex5_2(3)">
+            <input class="ex5_2_i" type="button" value="-10" id="sub" onclick="javascript:ex5_2(4)">
+            <input class="ex5_2_i" type="button" value="+1" id="sub" onclick="javascript:ex5_2(5)">
+            <input class="ex5_2_i" type="button" value="+10" id="sub" onclick="javascript:ex5_2(6)">
+            <label class="ex5_2_l">La variable c contient le décimal 1,00 mais le point est une valeur flottante</label>
+            <input class="ex5_2_i"type="button" value="Tester" id="sub" onclick="javascript:ex5_2(7)">
+            <label class="ex5_2_l">La variable d contient un booléen dont la valeur est <div id="ex5_2_bool">true</div></label>
+            <input class="ex5_2_i"type="button" value="Tester" id="sub" onclick="javascript:ex5_2(8)">
+            <input class="ex5_2_i"type="button" value="Inverser" id="sub" onclick="javascript:ex5_2(9)">
+            <label class="ex5_2_l">Si j'additionne a et b il s'agit d'une concaténation; le type  de donnée sera donc chaîne de caractères !<div id="ex5_2_add"></div></label>
+            <input class="ex5_2_i"type="button" value="Tester" id="sub" onclick="javascript:ex5_2(0)">
+        </fieldset>
+    </form>
+
+    <hr class="large">
+
+    <h1>JS07</h1>
+    <br>
+
+    <form>
+        <fieldset id="fs_ex7_1">
+            <legend>Exercice 1 : Parité</legend>
+            <label class="ex7_1_l">Entrez un nombre : </label>
+            <input class="ex7_1_i" type="number" placeholder="1234" id="ex7_1_nbr">
+            <input class="ex7_1_i" type="button" value="Envoyer" id="ex7_1_sb" onclick="javascript:ex7_1()">
+            <div id="ex7_1_op" class="output_inline"></div>
+        </fieldset>
+    </form>
+    
+    <hr class="large">
+
+    <form>
+        <fieldset id="fs_ex7_2">
+            <legend>Exercice 2 : Age</legend>
+            <label class="ex7_2_l">Entrez votre année de naissance : </label>
+            <input class="ex7_2_i" type="text" placeholder="aaaa" id="ex7_2_ddn">
+            <input class="ex7_2_i" type="button" value="Envoyer" id="ex7_2_sb" onclick="javascript:ex7_2()">
+            <div id="ex7_2_op" class="output_inline"></div>
+        </fieldset>
+    </form>
+
+    <hr class="large">
+
+    <form>
+        <fieldset id="fs_ex7_3">
+            <legend>Exercice 3 : Calculatrice</legend>
+            <label class="ex7_3_l">Entrez un premier nombre ou chiffre :</label>
+            <input class="ex7_3_i" type="number" placeholder="1234" id="ex7_3_nb1">
+            <label class="ex7_3_l">Séléctionnez un opérateur : </label>
+            <select class="ex7_3_i"id="ex7_3_ope">
+                <option value="+" selected>+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <label class="ex7_3_l">Entrez un second nombre ou chiffre : </label>
+            <input class="ex7_3_i" type="text" placeholder="1234" id="ex7_3_nb2">
+            <div id="ex7_3_op">Résultat : </div>
+            <input class="ex7_3_i" type="button" value="Envoyer" id="ex7_3_sb" onclick="javascript:ex7_3()">
+        </fieldset>
+    </form>
+
+    <hr class="large">
+
+    <h1>JS08</h1>
+    <br>
+
+    <form>
+        <fieldset id="fs_ex8_1">
+            <legend>Exercice 1 : Saisie</legend>
+            <!-- <label class="ex8_1_l" id="ex_8_1_label">Entrez le Prénom n°<div id="ex8_1_idx">1</div> : </label>
+            <input class="ex8_1_i" type="text" id="ex8_1_prn"> -->
+            <input class="ex8_1_i" type="button" value="Saisie" id="ex8_1_vd" onclick="javascript:ex8_1(0)">
+            <input class="ex8_1_i" type="button" value="Afficher" id="ex8_1_af" onclick="javascript:ex8_1(1)">
+            <input class="ex8_1_i" type="button" value="Effacer" id="ex8_1_sb" onclick="javascript:ex8_1(2)">
+        </fieldset>
+    </form>
+    <div id="ex8_1_op"></div>
+
+    <hr class="large">
+
+    <form>
+        <fieldset id="fs_ex8_2">
+            <legend>Exercice 2 : Age</legend>
+            <label class="ex8_2_l">Entrez un nombre entier : </label>
+            <input class="ex8_2_i" type="text" placeholder="1234" id="ex8_2_nb">
+            <input class="ex8_2_i" type="button" value="Envoyer" id="ex8_2_sb" onclick="javascript:ex8_2()">
+        </fieldset>
+        <div id="ex8_2_op" class="output_inline"></div>
+    </form>
+
+    <hr class="large">
+
+    <form>
+        <fieldset id="fs_ex8_3">
+            <legend>Exercice 3 : Moyenne</legend>
+            <input class="ex8_3_i" type="button" value="Saisie" id="ex8_3_vd" onclick="javascript:ex8_3(0)">
+            <input class="ex8_3_i" type="button" value="Additionner" id="ex8_3_af" onclick="javascript:ex8_3(1)">
+            <input class="ex8_3_i" type="button" value="Effacer" id="ex8_3_sb" onclick="javascript:ex8_3(2)">
+        </fieldset>
+        <div id="ex8_3_op" class="output_inline"></div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
