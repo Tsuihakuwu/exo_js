@@ -135,10 +135,37 @@
         <fieldset id="fs_ex8_3">
             <legend>Exercice 3 : Moyenne</legend>
             <input class="ex8_3_i" type="button" value="Saisie" id="ex8_3_vd" onclick="javascript:ex8_3(0)">
-            <input class="ex8_3_i" type="button" value="Additionner" id="ex8_3_af" onclick="javascript:ex8_3(1)">
-            <input class="ex8_3_i" type="button" value="Effacer" id="ex8_3_sb" onclick="javascript:ex8_3(2)">
+            <input class="ex8_3_i" type="button" value="Additionner" id="ex8_3_ad" onclick="javascript:ex8_3(1)">
+            <input class="ex8_3_i" type="button" value="Moyenne" id="ex8_3_mo" onclick="javascript:ex8_3(2)">
         </fieldset>
         <div id="ex8_3_op" class="output_inline"></div>
+    </form>
+
+
+    <hr class="large">
+
+    <form>
+        <fieldset id="fs_ex8_4">
+            <legend>Exercice 4 : Multiples</legend>
+            <label class="ex8_4_l">Entrez le nombre N : </label>
+            <input class="ex8_4_i" type="number" placeholder="1234" id="ex8_4_nb1">
+            <label class="ex8_4_l">Entrez le nombre Y : </label>
+            <input class="ex8_4_i" type="number" placeholder="1234" id="ex8_4_nb2">
+            <input class="ex8_4_i" type="button" value="Calculer" id="ex8_4_sb" onclick="ex8_4()">
+        </fieldset>
+        <div id="ex8_4_op" class="output_inline"></div>
+    </form>
+
+    <hr class="large">
+
+    <form>
+        <fieldset id="fs_ex8_5">
+            <legend>Exercice 5 : Nombre de voyelles</legend>
+            <label class="ex8_5_l">Entrez un mot : </label>
+            <input class="ex8_5_i" type="text" placeholder="Anticonstitutionnellement" id="ex8_5_mot">
+            <input class="ex8_5_i" type="button" value="Calculer" id="ex8_5_sb" onclick="ex8_5()">
+        </fieldset>
+        <div id="ex8_5_op" class="output_inline"></div>
     </form>
 
     <script src="script.js"></script>

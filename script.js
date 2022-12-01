@@ -267,39 +267,39 @@ function ex7_3() {
 //     Enfin, la page affiche sur la console le nombre de prénoms et les prénoms saisis.
 
 
-var ex8_1_table_output = ['Index','Prénom'];
+var ex8_1_table_output = ['Index', 'Prénom'];
 
 //var ex8_1_table_output = ['Index','Prénom',"1","Matthias","2","Matthias","3","Matthias","4","Matthias","5","Matthias","6","Matthias","7","Matthias","8","Matthias","9","Matthias","10","Matthias",];
 
 function ex8_1(index_8_1) {
-    
+
     //var prenom = document.getElementById("ex8_1_prn").value;
     //var i = document.getElementById("ex8_1_idx").innerHTML;
 
-    if(i==undefined){
-        var i =1;
+    if (i == undefined) {
+        var i = 1;
     }
 
 
-    switch(index_8_1) {
-        case(0):
+    switch (index_8_1) {
+        case (0):
             let prt = true;
-            while(prt){
-                s = window.prompt("Entrez le prénom n°"+i);
-                ex8_1_table_output.push(i,s);
+            while (prt) {
+                s = window.prompt("Entrez le prénom n°" + i);
+                ex8_1_table_output.push(i, s);
                 i++;
                 //alert(typeof s);
-                if(typeof s != typeof " "){
+                if (typeof s != typeof " ") {
                     //alert("prt=false");
-                    prt=false;
+                    prt = false;
                 }
             }
             break;
-        case(1):
+        case (1):
             var arrayLength = ex8_1_table_output.length;
-            arrayLength = arrayLength-2;
+            arrayLength = arrayLength - 2;
             var theTable = document.createElement('table');
-            for (var i = 0, tr, td; i < arrayLength; i++) {
+            for (var i = 0, tr, td1, td2; i < arrayLength; i++) {
                 tr = document.createElement('tr');
                 td1 = document.createElement('td');
                 td2 = document.createElement('td');
@@ -309,27 +309,27 @@ function ex8_1(index_8_1) {
                 tr.appendChild(td1);
                 tr.appendChild(td2);
                 theTable.appendChild(tr);
-                }
+            }
             document.getElementById("ex8_1_op").appendChild(theTable);
             theTable.setAttribute("border", "2");
             theTable.setAttribute("width", "249px");
             theTable.setAttribute("margin-top", "20px");
             break;
-            // if(i==1){
-            //     // document.getElementById("ex8_1_op").innerHTML = "<th><td>Index</td><td>Prénom</td></th><tr><td>"+i+"</td><td>"+prenom+"</td></tr>";
-            //     // i++;
-            // }
-            // else if(i>=2){
-                // document.getElementById("ex8_1_op").innerHTML = document.getElementById("ex8_1_op").innerHTML + "<tr><td>"+i+"</td><td>"+prenom+"</td></tr>";
+        // if(i==1){
+        //     // document.getElementById("ex8_1_op").innerHTML = "<th><td>Index</td><td>Prénom</td></th><tr><td>"+i+"</td><td>"+prenom+"</td></tr>";
+        //     // i++;
+        // }
+        // else if(i>=2){
+        // document.getElementById("ex8_1_op").innerHTML = document.getElementById("ex8_1_op").innerHTML + "<tr><td>"+i+"</td><td>"+prenom+"</td></tr>";
         //         // i++;
         //     }
         //     break;
         // case(1):
 
         //     break;
-        case(2):
+        case (2):
             document.getElementById("ex8_1_op").innerHTML = " ";
-            ex8_1_table_output = ['Index','Prénom'];
+            ex8_1_table_output = ['Index', 'Prénom'];
             break;
     }
 }
@@ -366,9 +366,9 @@ function ex8_2() {
     document.getElementById("ex8_2_op").innerHTML = "";
     let output8_2 = nbr + ", ";
     for (var i = 0; nbr > i; nbr--) {
-        output8_2 += document.getElementById("ex8_2_op").innerHTML + nbr-1 + ", ";
+        output8_2 += document.getElementById("ex8_2_op").innerHTML + nbr - 1 + ", ";
     }
-    document.getElementById("ex8_2_op").innerHTML = output8_2.slice(0,-2);
+    document.getElementById("ex8_2_op").innerHTML = output8_2.slice(0, -2);
 }
 
 ///////////////////////////// Exercice 3 JS08 /////////////////////////////
@@ -377,48 +377,116 @@ function ex8_2() {
 
 // Ecrire un programme qui demande à l'utilisateur de saisir des entiers et en affiche la somme et la moyenne (on arrête la saisie avec la valeur 0).
 
-var ex8_3_output = ['10,20,30'];
-
-//var ex8_1_table_output = ['Index','Prénom',"1","Matthias","2","Matthias","3","Matthias","4","Matthias","5","Matthias","6","Matthias","7","Matthias","8","Matthias","9","Matthias","10","Matthias",];
+var ex8_3_output = [];
 
 function ex8_3(index_8_3) {
-    
+
     //var prenom = document.getElementById("ex8_1_prn").value;
     //var i = document.getElementById("ex8_1_idx").innerHTML;
 
-    if(i==undefined){
-        var i =1;
+    if (i == undefined) {
+        var i = 1;
     }
 
 
-    switch(index_8_3) {
-        case(0):
+    switch (index_8_3) {
+        case (0):
             let prt = true;
-            while(prt){
-                let s = window.prompt("Entrez le nombre n°"+i +" (Entrez 0 pour quitter)");
+            while (prt) {
+                let s = window.prompt("Entrez le nombre n°" + i + " (Entrez 0 pour quitter)");
                 ex8_3_output.push(s);
                 i++;
                 //alert(typeof s);
-                if(s == "0"){
-                    prt=false;
+                if (s == "0") {
+                    prt = false;
                 }
             }
             break;
-        case(1):
+        case (1):
             var add = 0;
-            var total = 0;
+            //console.log("Taille du tableau : " + ex8_3_output.length);
             for (var i = 0; i < ex8_3_output.length; i++) {
-                add = add + ex8_3_output[i];
-                total = total + parseInt(add);
-                console.log(add);
-                console.log(total);
-                //console.log(ex8_3_output[i]);
+                if (ex8_3_output[i] == '0') {
+                    break;
+                }
+                else {
+                    parseInt(add);
+                    var add2 = ex8_3_output[i];
+                    add2 = parseInt(add2);
+                    add = add + add2;
+                }
             }
-            add
-            document.getElementById("ex8_3_op").innerHTML = "L'addition des nombres est égal à : " + total;
+            document.getElementById("ex8_3_op").innerHTML = "L'addition des nombres est égal à : " + add;
             break;
-        case(2):
-            
+        case (2):
+            var add = 0;
+            //console.log("Taille du tableau : " + ex8_3_output.length);
+            for (var i = 0; i < ex8_3_output.length; i++) {
+                if (ex8_3_output[i] == '0') {
+                    break;
+                }
+                else {
+                    parseInt(add);
+                    var add2 = ex8_3_output[i];
+                    add2 = parseInt(add2);
+                    add = add + add2;
+                }
+            }
+            moy = add / (ex8_3_output.length - 1);
+            document.getElementById("ex8_3_op").innerHTML = "La moyenne des nombres est égale à : " + moy;
             break;
     }
+}
+
+
+///////////////////////////// Exercice 4 JS08 /////////////////////////////
+
+//Exercice 4 - Multiples
+
+// Ecrire un programme qui calcule les N premiers multiples d'un nombre entier X, N et X étant entrés au clavier.
+
+// Exemple pour N=5 et X=7 :
+
+// 1 x 7 = 7
+// 2 x 7 = 14
+// 3 x 7 = 21
+// 4 x 7 = 28
+// 5 x 7 = 35
+
+// Il est demandé de choisir la structure répétitive (for, while, do...while) la mieux appropriée au problème.
+
+function ex8_4() {
+    var n = document.getElementById("ex8_2_nb1").value;
+    var y = document.getElementById("ex8_2_nb2").value;
+
+    for (var i = 0; i-1 < n; i++) {
+        let res = i * y;
+        document.getElementById("ex8_4_op").innerHTML = document.getElementById("ex8_4_op").innerHTML + "<br/>" + i + " " + " x " + " " + y + " = " + res;
+    }
+}
+
+///////////////////////////// Exercice 5 JS08 /////////////////////////////
+
+// Exercice 5 - Nombre de voyelles.
+
+// Ecrire le programme qui compte le nombre de voyelles d’un mot saisi au clavier, en utilisant :
+
+//     myVar.length : retourne le nombre de lettres de la chaîne myVar.
+//     myVar.substring(p,n) : extrait d'une chaîne donnée une sous-chaîne de n caractères à partir de la position p (attention, en Javascript, le 1er caractère se trouve à la position 0)
+//     myVar.indexOf(chaine) : retourne le rang de la première occurrence de chaîne dans la variable myVar donnée (si non trouvé : -1).
+
+function ex8_5() {
+    var mot = document.getElementById("ex8_5_mot").value;
+    var voy = 0;
+    document.getElementById("ex8_5_op").innerHTML = "Le nombre de lettres dans la chaine est de : " + mot.length;
+    for(i=0; i<mot.length;i++){
+        if(mot.substring(i,i+1).match(/[aeiouy]/ig)){
+            voy++;
+            if(voy==1){
+                index= i+1;
+                document.getElementById("ex8_5_op").innerHTML = document.getElementById("ex8_5_op").innerHTML + "<br/> La première occurence d'une voyelle apparait en "+ index +"em position.";            
+            }
+        }
+    }
+    document.getElementById("ex8_5_op").innerHTML = document.getElementById("ex8_5_op").innerHTML + "<br/> La chaine de caractères contient "+voy+" voyelles.";
 }
