@@ -108,8 +108,6 @@
     <form>
         <fieldset id="fs_ex8_1">
             <legend>Exercice 1 : Saisie</legend>
-            <!-- <label class="ex8_1_l" id="ex_8_1_label">Entrez le Prénom n°<div id="ex8_1_idx">1</div> : </label>
-            <input class="ex8_1_i" type="text" id="ex8_1_prn"> -->
             <input class="ex8_1_i" type="button" value="Saisie" id="ex8_1_vd" onclick="javascript:ex8_1(0)">
             <input class="ex8_1_i" type="button" value="Afficher" id="ex8_1_af" onclick="javascript:ex8_1(1)">
             <input class="ex8_1_i" type="button" value="Effacer" id="ex8_1_sb" onclick="javascript:ex8_1(2)">
@@ -121,7 +119,7 @@
 
     <form>
         <fieldset id="fs_ex8_2">
-            <legend>Exercice 2 : Age</legend>
+            <legend>Exercice 2 : Entiers inférieurs à N</legend>
             <label class="ex8_2_l">Entrez un nombre entier : </label>
             <input class="ex8_2_i" type="text" placeholder="1234" id="ex8_2_nb">
             <input class="ex8_2_i" type="button" value="Envoyer" id="ex8_2_sb" onclick="javascript:ex8_2()">
@@ -158,6 +156,7 @@
 
     <hr class="large">
 
+
     <form>
         <fieldset id="fs_ex8_5">
             <legend>Exercice 5 : Nombre de voyelles</legend>
@@ -166,6 +165,35 @@
             <input class="ex8_5_i" type="button" value="Calculer" id="ex8_5_sb" onclick="ex8_5()">
         </fieldset>
         <div id="ex8_5_op" class="output_inline"></div>
+    </form>
+
+    <hr class="large">
+    <h1>JS09</h1>
+
+    <form>
+        <fieldset id="fs_ex9_1">
+            <legend>Exercice 5 : Multiplication et Papillon</legend>
+            <label class="ex9_1_l">Entrez un premier nombre : </label>
+            <input class="ex9_1_i" type="number" placeholder="1234" id="ex9_1_nb1">
+            <label class="ex9_1_l">Entrez un deuxieme nombre : </label>
+            <input class="ex9_1_i" type="number" placeholder="1234" id="ex9_1_nb2">            
+            <input class="ex9_1_i" type="button" value="Multiplier" id="ex9_1_sb" onclick="ex9_1(0)">
+            <input class="ex9_1_i" type="button" value="Afficher Papillon" id="ex9_1_pa" onclick="ex9_1(1)">
+            <input class="ex9_1_i" type="button" value="Effacer" id="ex9_1_de" onclick="ex9_1(2)">
+        </fieldset>
+        <div id="ex9_1_op" class="output_inline"></div>
+    </form>
+
+    <hr class="large">
+
+    <form>
+        <fieldset id="fs_ex10_1">
+            <legend>Exercice 5 : Création d'un tableau</legend>
+            <label class="ex10_1_l">Entrez la taille de votre tableau : </label>
+            <input class="ex10_1_i" type="number" value="1234" id="ex10_1_tab">
+            <input class="ex10_1_i" type="button" value="Création" id="ex10_1_sb" onclick="ex10_1_a()">
+            <div id="ex10_1_op"></div>
+        </fieldset>
     </form>
 
     <script src="script.js"></script>

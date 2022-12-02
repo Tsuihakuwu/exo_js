@@ -296,6 +296,7 @@ function ex8_1(index_8_1) {
             }
             break;
         case (1):
+            document.getElementById("ex8_1_op").innerHTML="";
             var arrayLength = ex8_1_table_output.length;
             arrayLength = arrayLength - 2;
             var theTable = document.createElement('table');
@@ -311,9 +312,10 @@ function ex8_1(index_8_1) {
                 theTable.appendChild(tr);
             }
             document.getElementById("ex8_1_op").appendChild(theTable);
-            theTable.setAttribute("border", "2");
-            theTable.setAttribute("width", "249px");
-            theTable.setAttribute("margin-top", "20px");
+            setAttributes(theTable,{"border":"2","width":"249px"});
+            // theTable.setAttribute("border", "2");
+            // theTable.setAttribute("width", "249px");
+            // theTable.setAttribute("margin-top", "20px");
             break;
         // if(i==1){
         //     // document.getElementById("ex8_1_op").innerHTML = "<th><td>Index</td><td>Prénom</td></th><tr><td>"+i+"</td><td>"+prenom+"</td></tr>";
@@ -456,8 +458,8 @@ function ex8_3(index_8_3) {
 // Il est demandé de choisir la structure répétitive (for, while, do...while) la mieux appropriée au problème.
 
 function ex8_4() {
-    var n = document.getElementById("ex8_2_nb1").value;
-    var y = document.getElementById("ex8_2_nb2").value;
+    var n = document.getElementById("ex8_4_nb1").value;
+    var y = document.getElementById("ex8_4_nb2").value;
 
     for (var i = 0; i-1 < n; i++) {
         let res = i * y;
@@ -489,4 +491,112 @@ function ex8_5() {
         }
     }
     document.getElementById("ex8_5_op").innerHTML = document.getElementById("ex8_5_op").innerHTML + "<br/> La chaine de caractères contient "+voy+" voyelles.";
+}
+
+///////////////////////////// Exercice 1 JS09 /////////////////////////////
+
+// Exercice 1
+
+// Créer les 2 fonctions suivantes :
+
+//     produit(x, y) qui retourne le produit des 2 variables x, y passées en paramètre.
+//     afficheImg(image) qui affiche l'image passée en paramètre. ( Le paramètre image correspond au chemin de votre image )
+
+// Créer la page HTML correspondant au résultat ci-dessous :
+
+// img_function_pap.JPG
+
+// Vous aurez besoin de cette image
+
+function ex9_1(idx){
+    switch(idx){
+        case(0):
+            nb1 = document.getElementById('ex9_1_nb1').value;
+            nb2 = document.getElementById('ex9_1_nb2').value;
+            var prod = nb1*nb2;
+            document.getElementById('ex9_1_op').innerHTML = "Le produit des deux nombres est égal à : " + prod;
+            break;
+        case(1):
+            var img_pap=document.createElement("img");
+            document.getElementById('ex9_1_op').appendChild(img_pap);
+            document.getElementById('ex9_1_op').lastChild.setAttribute('src','papillon.jpg');
+            break;
+        case(2):
+            document.getElementById('ex9_1_op').innerHTML = "";
+            break;
+    }
+}
+
+///////////////////////////// Exercice 2 JS09 /////////////////////////////
+
+// Exercice 2 - String Token
+
+// Concevez la fonction strtok() qui prend 3 paramètres str1, str2, n en entrée et renvoie une chaîne de caractères : str1 est composée d'une liste de mots séparés par le caractère str2. strtok() sert à extraire le nième mot de str1.
+
+// Exemple :
+
+// Pour str1 = « robert ;dupont ;amiens ;80000 », strtok (str1, « ; », 3) doit retourner amiens.
+
+// Indice : utilisez la méthode split().
+
+function ex9_2(){
+    
+    function strtok(str1,str2,n){
+        var index = str1.split(str2);
+        return index[n-1];
+    }
+
+
+    var str1 = document.getElementById("ex9_2_str1").value;
+    var str2 = document.getElementById("ex9_2_str2").value;
+    var tok = document.getElementById("ex9_2_tok").value;
+    // alert("debug1 :" + str1);k
+    var index_retour = strtok(str1, str2, tok);
+    // alert("debug4 :" + index_retour);
+
+    document.getElementById("ex9_2_op").innerHTML = "La valeur à l'index "+ tok + " est égale à : " + index_retour;
+}
+
+///////////////////////////// Exercice 1 JS10 /////////////////////////////
+
+// Exercice 1
+
+// Ecrivez un programme permettant de créer un tableau, dont la taille est saisie au clavier.
+
+// Ensuite l'utilisateur doit rentrer les différentes valeurs du tableau.
+
+// Puis votre programme doit afficher le contenu du tableau.
+
+const my_array10_1 = [];
+
+function setAttributes(el, attrs) {
+    for(var key in attrs) {
+        el.setAttribute(key, attrs[key]);
+    }
+}
+
+function ex10_1_a(){
+    document.getElementById("ex10_1_op").innerHTML="";
+    for(var i=1; i < parseInt(document.getElementById("ex10_1_tab").value)+1; i++){
+        input = document.createElement('input');
+        input_validate = document.createElement('input');
+        label = document.createElement('label');
+        br = document.createElement('br');
+        document.getElementById("ex10_1_op").appendChild(label);
+        label.innerHTML = "Entrée n°"+i+" : ";
+        document.getElementById("ex10_1_op").appendChild(input);
+        document.getElementById("ex10_1_op").appendChild(br);
+        setAttributes(input, {'class':'ex10_1_i','type':'text','placeholder':'Valeur','id':'ex10_1_input'+i});
+        // input.setAttribute('class','ex10_1_i');
+        // input.setAttribute('type','text');
+        // input.setAttribute('placeholder','Valeur');
+        // input.setAttribute('id','ex10_1_input'+i);
+    }
+    document.getElementById("ex10_1_op").appendChild(input_validate);
+    setAttributes(input_validate, {'class':'ex10_1_i','type':'button','value':'Recherche','id':'ex10_1_sb','onclick':'ex10_1_b()'});
+    // input_validate.setAttribute('class','ex10_1_i');
+    // input_validate.setAttribute('type','button');
+    // input_validate.setAttribute('value','Recherche');
+    // input_validate.setAttribute('id','ex10_1_sb');
+    // input_validate.setAttribute('onclick','ex10_1_b()');
 }
