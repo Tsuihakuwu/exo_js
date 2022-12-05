@@ -296,7 +296,7 @@ function ex8_1(index_8_1) {
             }
             break;
         case (1):
-            document.getElementById("ex8_1_op").innerHTML="";
+            document.getElementById("ex8_1_op").innerHTML = "";
             var arrayLength = ex8_1_table_output.length;
             arrayLength = arrayLength - 2;
             var theTable = document.createElement('table');
@@ -312,7 +312,7 @@ function ex8_1(index_8_1) {
                 theTable.appendChild(tr);
             }
             document.getElementById("ex8_1_op").appendChild(theTable);
-            setAttributes(theTable,{"border":"2","width":"249px"});
+            setAttributes(theTable, { "border": "2", "width": "249px" });
             // theTable.setAttribute("border", "2");
             // theTable.setAttribute("width", "249px");
             // theTable.setAttribute("margin-top", "20px");
@@ -461,7 +461,7 @@ function ex8_4() {
     var n = document.getElementById("ex8_4_nb1").value;
     var y = document.getElementById("ex8_4_nb2").value;
 
-    for (var i = 0; i-1 < n; i++) {
+    for (var i = 0; i - 1 < n; i++) {
         let res = i * y;
         document.getElementById("ex8_4_op").innerHTML = document.getElementById("ex8_4_op").innerHTML + "<br/>" + i + " " + " x " + " " + y + " = " + res;
     }
@@ -481,16 +481,16 @@ function ex8_5() {
     var mot = document.getElementById("ex8_5_mot").value;
     var voy = 0;
     document.getElementById("ex8_5_op").innerHTML = "Le nombre de lettres dans la chaine est de : " + mot.length;
-    for(i=0; i<mot.length;i++){
-        if(mot.substring(i,i+1).match(/[aeiouy]/ig)){
+    for (i = 0; i < mot.length; i++) {
+        if (mot.substring(i, i + 1).match(/[aeiouy]/ig)) {
             voy++;
-            if(voy==1){
-                index= i+1;
-                document.getElementById("ex8_5_op").innerHTML = document.getElementById("ex8_5_op").innerHTML + "<br/> La première occurence d'une voyelle apparait en "+ index +"em position.";            
+            if (voy == 1) {
+                index = i + 1;
+                document.getElementById("ex8_5_op").innerHTML = document.getElementById("ex8_5_op").innerHTML + "<br/> La première occurence d'une voyelle apparait en " + index + "em position.";
             }
         }
     }
-    document.getElementById("ex8_5_op").innerHTML = document.getElementById("ex8_5_op").innerHTML + "<br/> La chaine de caractères contient "+voy+" voyelles.";
+    document.getElementById("ex8_5_op").innerHTML = document.getElementById("ex8_5_op").innerHTML + "<br/> La chaine de caractères contient " + voy + " voyelles.";
 }
 
 ///////////////////////////// Exercice 1 JS09 /////////////////////////////
@@ -508,20 +508,21 @@ function ex8_5() {
 
 // Vous aurez besoin de cette image
 
-function ex9_1(idx){
-    switch(idx){
-        case(0):
+function ex9_1(idx) {
+    switch (idx) {
+        case (0):
             nb1 = document.getElementById('ex9_1_nb1').value;
             nb2 = document.getElementById('ex9_1_nb2').value;
-            var prod = nb1*nb2;
+            var prod = nb1 * nb2;
             document.getElementById('ex9_1_op').innerHTML = "Le produit des deux nombres est égal à : " + prod;
             break;
-        case(1):
-            var img_pap=document.createElement("img");
+        case (1):
+            document.getElementById('ex9_1_op').innerHTML = "";
+            var img_pap = document.createElement("img");
             document.getElementById('ex9_1_op').appendChild(img_pap);
-            document.getElementById('ex9_1_op').lastChild.setAttribute('src','papillon.jpg');
+            document.getElementById('ex9_1_op').lastChild.setAttribute('src', 'papillon.jpg');
             break;
-        case(2):
+        case (2):
             document.getElementById('ex9_1_op').innerHTML = "";
             break;
     }
@@ -539,22 +540,20 @@ function ex9_1(idx){
 
 // Indice : utilisez la méthode split().
 
-function ex9_2(){
-    
-    function strtok(str1,str2,n){
+function ex9_2() {
+
+    function strtok(str1, str2, n) {
         var index = str1.split(str2);
-        return index[n-1];
+        return index[n - 1];
     }
-
-
     var str1 = document.getElementById("ex9_2_str1").value;
     var str2 = document.getElementById("ex9_2_str2").value;
     var tok = document.getElementById("ex9_2_tok").value;
-    // alert("debug1 :" + str1);k
+    // alert("debug1 :" + str1);
     var index_retour = strtok(str1, str2, tok);
     // alert("debug4 :" + index_retour);
 
-    document.getElementById("ex9_2_op").innerHTML = "La valeur à l'index "+ tok + " est égale à : " + index_retour;
+    document.getElementById("ex9_2_op").innerHTML = "La valeur à l'index " + tok + " est égale à : " + index_retour;
 }
 
 ///////////////////////////// Exercice 1 JS10 /////////////////////////////
@@ -570,33 +569,252 @@ function ex9_2(){
 const my_array10_1 = [];
 
 function setAttributes(el, attrs) {
-    for(var key in attrs) {
+    for (var key in attrs) {
         el.setAttribute(key, attrs[key]);
     }
 }
 
-function ex10_1_a(){
-    document.getElementById("ex10_1_op").innerHTML="";
-    for(var i=1; i < parseInt(document.getElementById("ex10_1_tab").value)+1; i++){
+function ex10_1_a() {
+    document.getElementById("ex10_1_op").innerHTML = "";
+    for (var i = 1; i < parseInt(document.getElementById("ex10_1_tab").value) + 1; i++) {
         input = document.createElement('input');
         input_validate = document.createElement('input');
         label = document.createElement('label');
+        setAttributes(label, {'class':'ex10_1_sb2'});
         br = document.createElement('br');
         document.getElementById("ex10_1_op").appendChild(label);
-        label.innerHTML = "Entrée n°"+i+" : ";
+        label.innerHTML = "Entrée n°" + i + " : ";
         document.getElementById("ex10_1_op").appendChild(input);
         document.getElementById("ex10_1_op").appendChild(br);
-        setAttributes(input, {'class':'ex10_1_i','type':'text','placeholder':'Valeur','id':'ex10_1_input'+i});
+        setAttributes(input, { 'class': 'ex10_1_sb2', 'type': 'text', 'value': Math.floor(Math.random(100) * 100), 'id': 'ex10_1_input' + i });
         // input.setAttribute('class','ex10_1_i');
         // input.setAttribute('type','text');
         // input.setAttribute('placeholder','Valeur');
         // input.setAttribute('id','ex10_1_input'+i);
     }
     document.getElementById("ex10_1_op").appendChild(input_validate);
-    setAttributes(input_validate, {'class':'ex10_1_i','type':'button','value':'Recherche','id':'ex10_1_sb','onclick':'ex10_1_b()'});
+    setAttributes(input_validate, { 'class': 'ex10_1_sb2', 'type': 'button', 'value': 'Afficher tableau', 'id': 'ex10_1_sb2', 'onclick': 'ex10_1_b()' });
     // input_validate.setAttribute('class','ex10_1_i');
     // input_validate.setAttribute('type','button');
     // input_validate.setAttribute('value','Recherche');
     // input_validate.setAttribute('id','ex10_1_sb');
     // input_validate.setAttribute('onclick','ex10_1_b()');
+
+    display_switch("ex10_1_sb1","ex10_1_sb2");
+
+
+}
+
+function ex10_1_b() {
+    //stockage dans tableau pour respecter l'exercice
+    for (var i = 1; i < parseInt(document.getElementById("ex10_1_tab").value) + 1; i++) {
+        my_array10_1[i] = document.getElementById("ex10_1_input" + i).value;
+    }
+
+    //mise en forme
+    document.getElementById("ex10_1_tb_op").innerHTML = " ";
+    var arrayLength10_1 = my_array10_1.length;
+    var table10_1 = document.createElement('table');
+    for (var i = 1, tr, td1, td2; i < arrayLength10_1; i++) {
+        //alert("i :" + i);
+        tr = document.createElement('tr');
+        td1 = document.createElement('td');
+        td2 = document.createElement('td');
+        td1.appendChild(document.createTextNode(i));
+        td2.appendChild(document.createTextNode(my_array10_1[i]));
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        table10_1.appendChild(tr);
+    }
+    document.getElementById("ex10_1_tb_op").appendChild(table10_1);
+    setAttributes(table10_1, { "border": "2", "width": "249px" });
+
+    display_switch("ex10_1_sb2","ex10_1_sb3");
+
+}
+
+///////////////////////////// Exercice 2 JS10 /////////////////////////////
+
+// Exercice 2
+
+// Créer le programme qui fournira un menu permettant d’obtenir les fonctionnalités suivantes à partir d’un tableau à une dimension :
+
+//     Affichage du contenu de tous les postes du tableau,
+//     Affichage du contenu d’un poste dont l’index est saisi au clavier,
+//     Affichage du maximum et de la moyenne des postes du tableau
+
+// Ce programme sera structuré de la manière suivante :
+
+//     une fonction GetInteger pour lire un entier au clavier,
+//     une fonction InitTab pour créer et initialiser l’instance de tableau : le nombre de postes souhaité sera entré au clavier,
+//     une fonction SaisieTab pour permettre la saisie des différents postes du tableau,
+//     une fonction AfficheTab pour afficher tous les postes du tableau,
+//     une fonction RechercheTab pour afficher le contenu d’un poste de tableau dont le rang est saisi au clavier
+//     une fonction InfoTab qui affichera le maximum et la moyenne des postes.
+
+// Les fonctions seront appelées successivement.
+
+var sai_int = 0;
+var my_array10_2 = [];
+
+//Le bouton est caché dans le HTML car aucune utilité pour un retour utilisateur
+function getInteger(id_champ) {
+    //sai_int = prompt("Saisissez un entier "+ msg +  " : ");
+    //alert(sai_int);
+    var valeur_champ = document.getElementById(id_champ).value;
+    valeur_champ = parseInt(valeur_champ);
+    if (valeur_champ > 100) {
+        return false;
+    }
+    else {
+        return valeur_champ;
+    }
+}
+
+function display_switch(item1, item2) {
+    for (i = 0; i < document.getElementsByClassName(item1).length; i++) {
+        document.getElementsByClassName(item1)[i].style.display = "none";
+    }
+    for (i = 0; i < document.getElementsByClassName(item2).length; i++) {
+        document.getElementsByClassName(item2)[i].style.display = "inline";
+    }
+}
+
+function initTab() {
+    //arrayLength = parseInt(getInteger("correspondant à la taille maximale du tableau"));
+    var arrayLength = getInteger("ex10_2_taille_tab");
+    if (arrayLength == false) {
+        alert("Abuse pas gamin :(");
+    }
+    else {
+        //alert("debug1"+arrayLength);
+        my_array10_2 = new Array(arrayLength);
+        //alert("La taille du tableau a été définie sur : "+my_array10_2.length);
+        display_switch("ex10_2_sb2", "ex10_2_sb3");
+    }
+}
+
+function saisieTab() {
+    let idx = 0;
+    //alert(my_array10_2.length);
+    for (let i = 0; i < my_array10_2.length; i++) {
+        idx = i + 1;
+        //my_array10_2[i] = prompt("Saisissez l'entrée n°"+ idx +" : ");
+        input = document.createElement('input');
+        label = document.createElement('label');
+        br = document.createElement('br');
+        document.getElementById("ex10_2_output_saisie").appendChild(label);
+        label.innerHTML = "Entrée n°" + idx + " : ";
+        document.getElementById("ex10_2_output_saisie").appendChild(input);
+        document.getElementById("ex10_2_output_saisie").appendChild(br);
+        setAttributes(input, { 'class': 'ex10_2_i', 'type': 'text', 'value': Math.floor(Math.random(100) * 100), 'id': 'ex10_2_input' + i });
+    }
+    display_switch("ex10_2_sb3", "ex10_2_sb4");
+}
+
+function afficheTab() {
+    //alert(my_array10_2.length+1);
+    for (var i = 0; i < my_array10_2.length; i++) {
+        //alert(parseInt(document.getElementById("ex10_2_input1").value), typeof document.getElementById("ex10_2_input1"));
+        my_array10_2[i] = parseInt(document.getElementById("ex10_2_input" + i).value);
+        //alert("Index : "+i+ "Champ : "+my_array10_2[i]);
+    }
+    var arrayLength10_2 = my_array10_2.length;
+    var table10_2 = document.createElement('table');
+    for (var i = 0, tr, td1, td2; i < arrayLength10_2; i++) {
+        //alert("i :" + i);
+        tr = document.createElement('tr');
+        td1 = document.createElement('td');
+        td2 = document.createElement('td');
+        td1.appendChild(document.createTextNode(i + 1));
+        td2.appendChild(document.createTextNode(my_array10_2[i]));
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        table10_2.appendChild(tr);
+        setAttributes(tr, { "id": "tr" + i });
+    }
+    br = document.createElement('br');
+    document.getElementById("ex10_2_op").appendChild(table10_2);
+    document.getElementById("ex10_2_op").appendChild(br);
+    setAttributes(table10_2, { "border": "2", "width": "249px" });
+    display_switch("ex10_2_sb4", "ex10_2_sb5");
+}
+
+function rechercheTab() {
+    //  idx = parseInt(getInteger("correspondant à l'index de la ligne à surligner"));
+    document.getElementById('ex10_2_info').innerHTML = " ";
+    idx = parseInt(document.getElementById('ex10_2_recherche').value);
+    //alert(my_array10_2[idx-1]);
+    if (idx > my_array10_2.length) {
+        alert('Index hors du tableau !');
+    }
+    else {
+        idx = idx - 1;
+        for (i = 0; i < my_array10_2.length; i++) {
+            document.getElementById('tr' + i).setAttribute("style", "background-color:white");
+        }
+        document.getElementById('tr' + idx).setAttribute("style", "background-color:blue;color:white");
+    }
+}
+
+function infoTab() {
+    var moy_tab = 0;
+    var total_tab = 0;
+    var max_tab = 0;
+    var idx_max = 0;
+    for (i = 0; i < my_array10_2.length; i++) {
+        total_tab += parseInt(my_array10_2[i]);
+        if (my_array10_2[i] > max_tab) {
+            idx_max = i;
+            max_tab = parseInt(my_array10_2[i]);
+        }
+    }
+    moy_tab = total_tab / my_array10_2.length;
+
+    for (i = 0; i < my_array10_2.length; i++) {
+        document.getElementById('tr' + i).setAttribute("style", "background-color:white");
+    }
+    document.getElementById('tr' + idx_max).setAttribute("style", "background-color:red;color:white");
+    idx_max++;
+    document.getElementById('ex10_2_info').innerHTML = "La somme de tout le tableau est égal à : " + total_tab + "<br>La moyenne des entrées est de : "
+    + moy_tab + "<br>Le maximum est de " + max_tab + " et est contenu dans la ligne " + idx_max + " surlignée en rouge."
+    // alert("moyenne=" + moy_tab);
+    // alert('maximum=' + max_tab);
+}
+
+///////////////////////////// Exercice 3 JS10 /////////////////////////////
+
+// Exercice 3 : Tri d’un tableau
+
+// Ecrire le programme qui réalise le tri à bulles.
+
+var my_array10_3 = [];
+
+function initTab10_3(){
+
+    //alert(parseInt(document.getElementById('ex10_3_taille_tab').value));
+    my_array10_3 = new Array(parseInt(document.getElementById('ex10_3_taille_tab').value));
+
+
+    let idx = 0;
+    //alert(my_array10_2.length);
+    for (let i = 0; i < my_array10_3.length; i++) {
+        idx = i + 1;
+        //my_array10_2[i] = prompt("Saisissez l'entrée n°"+ idx +" : ");
+        input = document.createElement('input');
+        label = document.createElement('label');
+        br = document.createElement('br');
+        document.getElementById("ex10_3_output_saisie").appendChild(label);
+        label.innerHTML = "Entrée n°" + idx + " : ";
+        document.getElementById("ex10_3_output_saisie").appendChild(input);
+        document.getElementById("ex10_3_output_saisie").appendChild(br);
+        setAttributes(input, { 'class': 'ex10_3_i', 'type': 'text', 'value': Math.floor(Math.random(100) * 100), 'id': 'ex10_3_input' + i });
+    }
+    display_switch("ex10_3_sb1","ex10_3_sb2");
+}
+
+function triTab10_3() {
+    for(i=0;i<my_array10_3.length;i++){
+        
+    }
 }

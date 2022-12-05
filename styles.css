@@ -86,3 +86,43 @@ input.ex5_2_i {
 #ex8_1_idx {
     display:inline;
 }
+
+/********************************** EX10.1 **********************************/
+
+.ex10_1_sb2 {
+    display:none;
+}
+
+.ex10_1_sb1 {
+    display:inline;
+}
+.ex10_2_sb3 {
+    display:none;
+}
+
+
+/********************************** EX10.2 **********************************/
+
+#ex10_2_sb1 {
+    display: none;
+}
+
+.ex10_2_sb2 {
+    display:inline;
+}
+
+.ex10_2_sb3 {
+    display:none;
+}
+
+.ex10_2_sb4 {
+    display:none;
+}
+
+.ex10_2_sb5 {
+    display:none;
+}
+
+.ex10_2_sb6 {
+    display:none;
+}

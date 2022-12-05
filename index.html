@@ -172,7 +172,7 @@
 
     <form>
         <fieldset id="fs_ex9_1">
-            <legend>Exercice 5 : Multiplication et Papillon</legend>
+            <legend>Exercice 1 : Multiplication et Papillon</legend>
             <label class="ex9_1_l">Entrez un premier nombre : </label>
             <input class="ex9_1_i" type="number" placeholder="1234" id="ex9_1_nb1">
             <label class="ex9_1_l">Entrez un deuxieme nombre : </label>
@@ -185,16 +185,50 @@
     </form>
 
     <hr class="large">
+    <h1>JS10</h1>
 
     <form>
         <fieldset id="fs_ex10_1">
-            <legend>Exercice 5 : Création d'un tableau</legend>
-            <label class="ex10_1_l">Entrez la taille de votre tableau : </label>
-            <input class="ex10_1_i" type="number" value="1234" id="ex10_1_tab">
-            <input class="ex10_1_i" type="button" value="Création" id="ex10_1_sb" onclick="ex10_1_a()">
-            <div id="ex10_1_op"></div>
+            <legend>Exercice 1 : Création d'un tableau</legend>
+            <div id="ex10_1_tb_op"></div>
+            <label class="ex10_1_sb1">Entrez la taille de votre tableau : </label>
+            <input class="ex10_1_sb1" type="number" placeholder="1234" id="ex10_1_tab">
+            <input class="ex10_1_sb1" type="button" value="Création" id="ex10_1_sb" onclick="ex10_1_a()">
+            <div class="ex10_1_sb3" id="ex10_1_op"></div>
         </fieldset>
     </form>
+
+    <hr class="large">
+
+    <form>
+        <fieldset id="fs_ex10_2">
+            <legend>Exercice 2 : Manipulations dans un tableau</legend>
+            <!-- <label class="ex10_2_l">Entrez la taille de votre tableau : </label> -->
+            <!-- <input class="ex10_2_i" type="number" value="" id="ex10_2_tab"> -->
+            <input class="ex10_2_i" type="button" value="getInteger" id="ex10_2_sb1" onclick="getInteger()">
+            <label class="ex10_2_sb2">Taille du tableau : </label><input class="ex10_2_sb2" type="number" value="10" id="ex10_2_taille_tab" placeholder="1234">
+            <input class="ex10_2_sb2" type="button" value="Initialisation Tableau" id="ex10_2_sb2" onclick="initTab()">
+            <input class="ex10_2_sb3" type="button" value="Saisie du tableau" id="ex10_2_sb3" onclick="saisieTab()">
+            <div id="ex10_2_output_saisie" class="ex10_2_sb4"></div>
+            <input class="ex10_2_sb4" type="button" value="Affichage" id="ex10_2_sb4" onclick="afficheTab()">
+            <div id="ex10_2_op"></div>
+            <label class="ex10_2_sb5">Index de la recherche : </label><input class="ex10_2_sb5" type="number" id="ex10_2_recherche" placeholder="1234">
+            <input class="ex10_2_sb5" type="button" value="Rechercher" id="ex10_2_sb5" onclick="rechercheTab()">            
+            <input class="ex10_2_sb5" type="button" value="Informations" id="ex10_2_sb6" onclick="infoTab()">
+            <div id="ex10_2_info"></div>
+        </fieldset>
+    </form>
+    <div id="ex10_2_tb_op"></div>
+
+    <hr class="large">
+
+    <form>
+        <fieldset id="fs_ex10_3">
+            <legend>Exercice 3 : Tri à bulles</legend>
+                <label class="ex10_3_sb1">Taille du tableau : </label><input class="ex10_3_sb1" type="number" value="10" id="ex10_3_taille_tab" placeholder="1234">
+                <input class="ex10_3_sb1" type="button" value="Envoyer" id="ex10_3_sb1" onclick="initTab10_3()">
+                <div id="ex10_3_output_saisie"></div>
+                <input class="ex10_3_sb2" type="button" value="Enregistrer et trier" id="ex10_3_sb2" onclick="triTab10_3()">
 
     <script src="script.js"></script>
 </body>
