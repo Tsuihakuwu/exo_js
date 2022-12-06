@@ -580,7 +580,7 @@ function ex10_1_a() {
         input = document.createElement('input');
         input_validate = document.createElement('input');
         label = document.createElement('label');
-        setAttributes(label, {'class':'ex10_1_sb2'});
+        setAttributes(label, { 'class': 'ex10_1_sb2' });
         br = document.createElement('br');
         document.getElementById("ex10_1_op").appendChild(label);
         label.innerHTML = "Entrée n°" + i + " : ";
@@ -600,7 +600,7 @@ function ex10_1_a() {
     // input_validate.setAttribute('id','ex10_1_sb');
     // input_validate.setAttribute('onclick','ex10_1_b()');
 
-    display_switch("ex10_1_sb1","ex10_1_sb2");
+    display_switch("ex10_1_sb1", "ex10_1_sb2");
 
 
 }
@@ -629,7 +629,7 @@ function ex10_1_b() {
     document.getElementById("ex10_1_tb_op").appendChild(table10_1);
     setAttributes(table10_1, { "border": "2", "width": "249px" });
 
-    display_switch("ex10_1_sb2","ex10_1_sb3");
+    display_switch("ex10_1_sb2", "ex10_1_sb3");
 
 }
 
@@ -777,7 +777,7 @@ function infoTab() {
     document.getElementById('tr' + idx_max).setAttribute("style", "background-color:red;color:white");
     idx_max++;
     document.getElementById('ex10_2_info').innerHTML = "La somme de tout le tableau est égal à : " + total_tab + "<br>La moyenne des entrées est de : "
-    + moy_tab + "<br>Le maximum est de " + max_tab + " et est contenu dans la ligne " + idx_max + " surlignée en rouge."
+        + moy_tab + "<br>Le maximum est de " + max_tab + " et est contenu dans la ligne " + idx_max + " surlignée en rouge."
     // alert("moyenne=" + moy_tab);
     // alert('maximum=' + max_tab);
 }
@@ -790,7 +790,7 @@ function infoTab() {
 
 var my_array10_3 = [];
 
-function initTab10_3(){
+function initTab10_3() {
 
     //alert(parseInt(document.getElementById('ex10_3_taille_tab').value));
     my_array10_3 = new Array(parseInt(document.getElementById('ex10_3_taille_tab').value));
@@ -808,13 +808,155 @@ function initTab10_3(){
         label.innerHTML = "Entrée n°" + idx + " : ";
         document.getElementById("ex10_3_output_saisie").appendChild(input);
         document.getElementById("ex10_3_output_saisie").appendChild(br);
-        setAttributes(input, { 'class': 'ex10_3_i', 'type': 'text', 'value': Math.floor(Math.random(100) * 100), 'id': 'ex10_3_input' + i });
+        setAttributes(input, { 'class': 'ex10_3_i', 'type': 'text', 'value': (Math.floor(Math.random(100) * 100)) + 1, 'id': 'ex10_3_input' + i });
     }
-    display_switch("ex10_3_sb1","ex10_3_sb2");
+    display_switch("ex10_3_sb1", "ex10_3_sb2");
 }
 
 function triTab10_3() {
-    for(i=0;i<my_array10_3.length;i++){
-        
+    //Aquisition des valeurs dans les champs
+    for (var i = 0; i < my_array10_3.length; i++) {
+        my_array10_3[i] = parseInt(document.getElementById("ex10_3_input" + i).value);
+    }
+
+    //Tri à bulles
+    var tmp = 0;
+    for (i = my_array10_3.length - 1; i > 0; i--) {
+        for (let j = 0; j < i; j++) {
+            if (my_array10_3[j + 1] < my_array10_3[j]) {
+                tmp = my_array10_3[j + 1];
+                my_array10_3[j + 1] = my_array10_3[j];
+                my_array10_3[j] = tmp;
+            }
+        }
+    }
+
+    //Affichage sous forme de tableau du resultat trié
+    var arrayLength10_3 = my_array10_3.length;
+    var table10_3 = document.createElement('table');
+    for (var i = 0, tr, td1, td2; i < arrayLength10_3; i++) {
+        //alert("i :" + i);
+        tr = document.createElement('tr');
+        td1 = document.createElement('td');
+        td2 = document.createElement('td');
+        td1.appendChild(document.createTextNode(i + 1));
+        td2.appendChild(document.createTextNode(my_array10_3[i]));
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        table10_3.appendChild(tr);
+        setAttributes(tr, { "id": "tr" + i });
+    }
+    br = document.createElement('br');
+    document.getElementById("ex10_3_output_final").appendChild(table10_3);
+    document.getElementById("ex10_3_output_final").appendChild(br);
+    setAttributes(table10_3, { "border": "2", "width": "249px" });
+    display_switch("ex10_3_sb2", "ex10_3_sb3");
+}
+
+function restart10_3() {
+    document.getElementById("ex10_3_output_final").innerHTML = "";
+    document.getElementById("ex10_3_output_saisie").innerHTML = "";
+    display_switch('ex10_3_sb3', 'ex10_3_sb1');
+}
+
+///////////////////////////// Exercice 1 JS13 /////////////////////////////
+
+// Exercice
+
+// Ecrivez un programme permettant de saisir différentes valeurs numérique (avec l'instruction window.prompt), ces valeurs seront rangées dans un tableau.
+
+// La saisie s'arrête quand l'utilisateur entre la valeur 0.
+
+// A la fin de la saisie, votre programme doit afficher le nombre de valeurs saisies, la somme et la moyenne.
+
+var my_array13_1 = [];
+var dynidx = 0;
+
+function sb_entry13_1() {
+    if (parseInt(document.getElementById("ex13_1_first").value) == 0) {
+        document.getElementById('ex13_1_output_saisie').innerHTML = "Entrez au moins une valeur differente de 0.";
+    }
+    else if (parseInt(document.getElementById("ex13_1_first").value) != 0) {
+        document.getElementById('ex13_1_sb1').setAttribute("style", "display:none;");
+        add_input13_1();
+    }
+}
+
+function add_input13_1() {
+    if (dynidx == 0) {
+        input = document.createElement('input');
+        label = document.createElement('label');
+        br = document.createElement('br');
+        button = document.createElement('input');
+        document.getElementById("ex13_1_output_saisie").appendChild(label);
+        var idxtmp = dynidx+2;
+        label.innerHTML = "Entrée n°" + idxtmp + " : ";
+        document.getElementById("ex13_1_output_saisie").appendChild(input);
+        document.getElementById("ex13_1_output_saisie").appendChild(button);
+        document.getElementById("ex13_1_output_saisie").appendChild(br);
+        setAttributes(button, { 'class': 'ex13_1_b', 'type': 'button', 'value': 'Envoyer', 'id': 'ex13_1_button' + dynidx, 'onclick': 'sb_dynentry_13_1(' + dynidx + ')' });
+        setAttributes(input, { 'class': 'ex13_1_i', 'type': 'text', 'value': (Math.floor(Math.random(100) * 100)) + 1, 'id': 'ex13_1_input' + dynidx });
+        my_array13_1[dynidx] = parseInt(document.getElementById('ex13_1_first').value);
+        //alert("DEBUG 2 : J'assigne la valeur : "+parseInt(document.getElementById('ex13_1_first').value)+"à l'indice " +dynidx+"et j'incrémente" );
+        dynidx++;
+    }
+    else if (dynidx > 0) {
+        input = document.createElement('input');
+        label = document.createElement('label');
+        br = document.createElement('br');
+        button = document.createElement('input');
+        document.getElementById("ex13_1_output_saisie").appendChild(label);
+        var idxtmp = dynidx+2;
+        label.innerHTML = "Entrée n°" + idxtmp + " : ";
+        document.getElementById("ex13_1_output_saisie").appendChild(input);
+        document.getElementById("ex13_1_output_saisie").appendChild(button);
+        document.getElementById("ex13_1_output_saisie").appendChild(br);
+        setAttributes(button, { 'class': 'ex13_1_b', 'type': 'button', 'value': 'Envoyer', 'id': 'ex13_1_button' + dynidx, 'onclick': 'sb_dynentry_13_1(' + dynidx + ')' });
+        setAttributes(input, { 'class': 'ex13_1_i', 'type': 'number', 'value': (Math.floor(Math.random(100) * 100)) + 1, 'id': 'ex13_1_input' + dynidx });
+        var idxtmp2 = dynidx-1;
+        my_array13_1[dynidx] = parseInt(document.getElementById('ex13_1_input' + idxtmp2).value);
+        //alert("DEBUG 3 : J'assigne la valeur : "+parseInt(document.getElementById('ex13_1_input' + idxtmp2).value)+"à l'indice " +dynidx+"et j'incrémente" );
+        //alert('debug my_array13_1.length = ' + my_array13_1.length);
+        for(i=0;i<my_array13_1.length;i++){
+            //cacher les submit dont le dynidx inférieur au dernier
+            var tmp = dynidx-1;
+            document.getElementById('ex13_1_button' + tmp).setAttribute("style","display:none")
+        }
+        dynidx++;
+    }
+}
+
+function sb_dynentry_13_1(dynidx) {
+    if (parseInt(document.getElementById('ex13_1_input' + dynidx).value) == 0) {
+        //Break si entrée = 0
+        //alert("egal a 0");
+        document.getElementById('ex13_1_output_saisie').innerHTML = "";
+        display_switch("ex13_1_sb1","");
+        var arrayLength13_1 = my_array13_1.length;
+        var table13_1 = document.createElement('table');
+        for (var i=0, tr, td1, td2; i < arrayLength13_1; i++) {
+            //alert("i :" + i);
+            tr = document.createElement('tr');
+            td1 = document.createElement('td');
+            td2 = document.createElement('td');
+            td1.appendChild(document.createTextNode(i + 1));
+            alert(my_array13_1[i]);
+            td2.appendChild(document.createTextNode(my_array13_1[i]));
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            table13_1.appendChild(tr);
+            setAttributes(tr, { "id": "tr" + i });
+        }
+        br = document.createElement('br');
+        document.getElementById("ex13_1_output_saisie").appendChild(table13_1);
+        document.getElementById("ex13_1_output_saisie").appendChild(br);
+        setAttributes(table13_1, { "border": "2", "width": "249px" });
+
+    }
+    else if (parseInt(document.getElementById('ex13_1_input' + dynidx).value) != 0) {
+        //Récuperer la valeur du champ input généré dynamiquement et en recréer un nouveau
+        //alert("diff de 0");
+        my_array13_1[dynidx+1] = parseInt(document.getElementById('ex13_1_input' + dynidx).value);
+        add_input13_1();
     }
 }

@@ -9,7 +9,7 @@
     margin-top:50px;
 }
 
-h1 {text-align: center;}
+h2 {text-align: center;}
 
 /********************************** EX5.1 **********************************/
 
@@ -126,3 +126,17 @@ input.ex5_2_i {
 .ex10_2_sb6 {
     display:none;
 }
+
+/********************************** EX10.2 **********************************/
+
+.ex10_3_sb2 {
+    display: none;
+}
+
+.ex10_3_sb3 {
+    display: none;
+}
+
+/* #ex13_1_sb1  {
+    display: block;
+} */
