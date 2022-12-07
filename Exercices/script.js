@@ -1,4 +1,20 @@
+//Event listener
+function el(id_ele,f){
+    let element = document.getElementById(id_ele);
+    element.addEventListener('click',f);
+}
+
+//set multiples attributes en une ligne
+function setAttributes(el, attrs) {
+    for (var key in attrs) {
+        el.setAttribute(key, attrs[key]);
+    }
+}
+
 ///////////////////////////// Exercice 1 JS05 /////////////////////////////
+
+//Event listener
+sub5_1.addEventListener("click", function(){ex5_1()});
 
 function ex5_1() {
     var reponse1 = document.getElementById("ex5_1_prenom").value;
@@ -28,6 +44,18 @@ function stringToBoolean(val) {
     };
     return a[val];
 }
+
+//Event listener
+sub5_2_1.addEventListener("click", function(){ex5_2(1)});
+sub5_2_2.addEventListener("click", function(){ex5_2(2)});
+sub5_2_3.addEventListener("click", function(){ex5_2(3)});
+sub5_2_4.addEventListener("click", function(){ex5_2(4)});
+sub5_2_5.addEventListener("click", function(){ex5_2(5)});
+sub5_2_6.addEventListener("click", function(){ex5_2(6)});
+sub5_2_7.addEventListener("click", function(){ex5_2(7)});
+sub5_2_8.addEventListener("click", function(){ex5_2(8)});
+sub5_2_9.addEventListener("click", function(){ex5_2(9)});
+sub5_2_0.addEventListener("click", function(){ex5_2(0)});
 
 function ex5_2(index_5_2) {
     var a = "100";
@@ -99,6 +127,9 @@ function ex5_2(index_5_2) {
 
 // var nbr = window.prompt("Entrez un chiffre ou un nombre : ");
 
+//Event listener
+ex7_1_sb.addEventListener("click", function(){ex7_1()});
+
 function ex7_1() {
     //alert(typeof document.getElementById("ex7_1_nbr").value);
     nbr = parseInt(document.getElementById("ex7_1_nbr").value);
@@ -117,6 +148,9 @@ function ex7_1() {
 // Exercice 2 - Age
 
 // Ecrivez un programme qui demande l'année de naissance à l'utilisateur. En réponse votre programme doit afficher l'âge de l'utilisateur et indiquer si l'utilisateur est majeur ou mineur.
+
+//Event listener
+ex7_2_sb.addEventListener("click", function(){ex7_2()});
 
 function ex7_2() {
     var ddn = document.getElementById("ex7_2_ddn").value;
@@ -181,6 +215,9 @@ function ex7_2() {
 // Si l'utilisateur entre un opérateur erroné, le programme affichera un message d'erreur.
 
 // Dans le cas contraire, le programme effectuera l'opération demandée (en prévoyant le cas d'erreur division par 0), puis affichera le résultat.
+
+//Event listener
+ex7_3_sb.addEventListener("click", function(){ex7_3()});
 
 function ex7_3() {
 
@@ -266,6 +303,10 @@ function ex7_3() {
 //     La page doit continuer à demander des prénoms à l'utilisateur jusqu'à ce qu'il laisse le champ vide.
 //     Enfin, la page affiche sur la console le nombre de prénoms et les prénoms saisis.
 
+//Event listener
+ex8_1_vd.addEventListener("click", function(){ex8_1(0)});
+ex8_1_af.addEventListener("click", function(){ex8_1(1)});
+ex8_1_sb.addEventListener("click", function(){ex8_1(2)});
 
 var ex8_1_table_output = ['Index', 'Prénom'];
 
@@ -362,6 +403,9 @@ function ex8_1(index_8_1) {
 
 // Ecrire un programme qui affiche les nombres inférieurs à N.
 
+//Event listener
+ex8_2_sb.addEventListener("click", function(){ex8_2()});
+
 function ex8_2() {
     let nbr = parseInt(document.getElementById("ex8_2_nb").value);
     //alert(nbr);
@@ -379,6 +423,11 @@ function ex8_2() {
 
 // Ecrire un programme qui demande à l'utilisateur de saisir des entiers et en affiche la somme et la moyenne (on arrête la saisie avec la valeur 0).
 
+// //Event listener
+ex8_3_vd.addEventListener("click", function(){ex8_3(0)});
+ex8_3_ad.addEventListener("click", function(){ex8_3(1)});
+ex8_3_mo.addEventListener("click", function(){ex8_3(2)});
+
 var ex8_3_output = [];
 
 function ex8_3(index_8_3) {
@@ -386,9 +435,7 @@ function ex8_3(index_8_3) {
     //var prenom = document.getElementById("ex8_1_prn").value;
     //var i = document.getElementById("ex8_1_idx").innerHTML;
 
-    if (i == undefined) {
-        var i = 1;
-    }
+    i = 1;
 
 
     switch (index_8_3) {
@@ -457,7 +504,11 @@ function ex8_3(index_8_3) {
 
 // Il est demandé de choisir la structure répétitive (for, while, do...while) la mieux appropriée au problème.
 
+// //Event listener
+ex8_4_sb.addEventListener("click", function(){ex8_4()});
+
 function ex8_4() {
+    document.getElementById("ex8_4_op").innerHTML = "";
     var n = document.getElementById("ex8_4_nb1").value;
     var y = document.getElementById("ex8_4_nb2").value;
 
@@ -476,6 +527,9 @@ function ex8_4() {
 //     myVar.length : retourne le nombre de lettres de la chaîne myVar.
 //     myVar.substring(p,n) : extrait d'une chaîne donnée une sous-chaîne de n caractères à partir de la position p (attention, en Javascript, le 1er caractère se trouve à la position 0)
 //     myVar.indexOf(chaine) : retourne le rang de la première occurrence de chaîne dans la variable myVar donnée (si non trouvé : -1).
+
+// //Event listener
+ex8_5_sb.addEventListener("click", function(){ex8_5()});
 
 function ex8_5() {
     var mot = document.getElementById("ex8_5_mot").value;
@@ -507,6 +561,11 @@ function ex8_5() {
 // img_function_pap.JPG
 
 // Vous aurez besoin de cette image
+
+// //Event listener
+ex9_1_sb.addEventListener("click", function(){ex9_1(0)});
+ex9_1_pa.addEventListener("click", function(){ex9_1(1)});
+ex9_1_de.addEventListener("click", function(){ex9_1(2)});
 
 function ex9_1(idx) {
     switch (idx) {
@@ -540,6 +599,9 @@ function ex9_1(idx) {
 
 // Indice : utilisez la méthode split().
 
+// //Event listener
+ex9_2_sb.addEventListener("click", function(){ex9_2()});
+
 function ex9_2() {
 
     function strtok(str1, str2, n) {
@@ -566,19 +628,16 @@ function ex9_2() {
 
 // Puis votre programme doit afficher le contenu du tableau.
 
-const my_array10_1 = [];
+// //Event listener
+ex10_1_sb1.addEventListener("click", function(){ex10_1_a()});
+ex10_1_sb2.addEventListener("click", function(){ex10_1_b()});
 
-function setAttributes(el, attrs) {
-    for (var key in attrs) {
-        el.setAttribute(key, attrs[key]);
-    }
-}
+const my_array10_1 = [];
 
 function ex10_1_a() {
     document.getElementById("ex10_1_op").innerHTML = "";
     for (var i = 1; i < parseInt(document.getElementById("ex10_1_tab").value) + 1; i++) {
         input = document.createElement('input');
-        input_validate = document.createElement('input');
         label = document.createElement('label');
         setAttributes(label, { 'class': 'ex10_1_sb2' });
         br = document.createElement('br');
@@ -592,8 +651,6 @@ function ex10_1_a() {
         // input.setAttribute('placeholder','Valeur');
         // input.setAttribute('id','ex10_1_input'+i);
     }
-    document.getElementById("ex10_1_op").appendChild(input_validate);
-    setAttributes(input_validate, { 'class': 'ex10_1_sb2', 'type': 'button', 'value': 'Afficher tableau', 'id': 'ex10_1_sb2', 'onclick': 'ex10_1_b()' });
     // input_validate.setAttribute('class','ex10_1_i');
     // input_validate.setAttribute('type','button');
     // input_validate.setAttribute('value','Recherche');
@@ -601,8 +658,6 @@ function ex10_1_a() {
     // input_validate.setAttribute('onclick','ex10_1_b()');
 
     display_switch("ex10_1_sb1", "ex10_1_sb2");
-
-
 }
 
 function ex10_1_b() {
@@ -653,6 +708,13 @@ function ex10_1_b() {
 //     une fonction InfoTab qui affichera le maximum et la moyenne des postes.
 
 // Les fonctions seront appelées successivement.
+
+// //Event listener
+ex10_2_sb2.addEventListener("click", function(){initTab()});
+ex10_2_sb3.addEventListener("click", function(){saisieTab()});
+ex10_2_sb4.addEventListener("click", function(){afficheTab()});
+ex10_2_sb5.addEventListener("click", function(){rechercheTab()});
+ex10_2_sb6.addEventListener("click", function(){infoTab()});
 
 var sai_int = 0;
 var my_array10_2 = [];
@@ -788,6 +850,11 @@ function infoTab() {
 
 // Ecrire le programme qui réalise le tri à bulles.
 
+// //Event listener
+ex10_3_sb1.addEventListener("click", function(){initTab10_3()});
+ex10_3_sb2.addEventListener("click", function(){triTab10_3()});
+ex10_3_sb3.addEventListener("click", function(){restart10_3()});
+
 var my_array10_3 = [];
 
 function initTab10_3() {
@@ -856,6 +923,7 @@ function triTab10_3() {
 function restart10_3() {
     document.getElementById("ex10_3_output_final").innerHTML = "";
     document.getElementById("ex10_3_output_saisie").innerHTML = "";
+    my_array10_3 = [];
     display_switch('ex10_3_sb3', 'ex10_3_sb1');
 }
 
@@ -868,6 +936,9 @@ function restart10_3() {
 // La saisie s'arrête quand l'utilisateur entre la valeur 0.
 
 // A la fin de la saisie, votre programme doit afficher le nombre de valeurs saisies, la somme et la moyenne.
+
+// //Event listener
+ex13_1_sb1.addEventListener("click", function(){sb_entry13_1()});
 
 var my_array13_1 = [];
 var dynidx = 0;
@@ -928,20 +999,23 @@ function add_input13_1() {
 
 function sb_dynentry_13_1(dynidx) {
     if (parseInt(document.getElementById('ex13_1_input' + dynidx).value) == 0) {
-        //Break si entrée = 0
+        //Break si entrée = 0 et création de la table d'affichage
         //alert("egal a 0");
         document.getElementById('ex13_1_output_saisie').innerHTML = "";
         display_switch("ex13_1_sb1","");
         var arrayLength13_1 = my_array13_1.length;
         var table13_1 = document.createElement('table');
+        var somme = 0;
+        var moyenne = 0;
         for (var i=0, tr, td1, td2; i < arrayLength13_1; i++) {
             //alert("i :" + i);
             tr = document.createElement('tr');
             td1 = document.createElement('td');
             td2 = document.createElement('td');
             td1.appendChild(document.createTextNode(i + 1));
-            alert(my_array13_1[i]);
+            //alert(my_array13_1[i]);
             td2.appendChild(document.createTextNode(my_array13_1[i]));
+            somme = somme + parseInt(my_array13_1[i]);
             tr.appendChild(td1);
             tr.appendChild(td2);
             table13_1.appendChild(tr);
@@ -951,7 +1025,12 @@ function sb_dynentry_13_1(dynidx) {
         document.getElementById("ex13_1_output_saisie").appendChild(table13_1);
         document.getElementById("ex13_1_output_saisie").appendChild(br);
         setAttributes(table13_1, { "border": "2", "width": "249px" });
-
+        var moyenne = somme / my_array13_1.length;
+        //alert(my_array13_1.length+" "+somme+" "+moyenne);
+        var res = "Nombre d'entrées dans le tableau = "+ my_array13_1.length+ " Somme des entrées = "+somme+" Moyenne des entrées = "+moyenne;
+        p = document.createElement('p');
+        p.appendChild(document.createTextNode(res));
+        document.getElementById("ex13_1_output_saisie").appendChild(p);
     }
     else if (parseInt(document.getElementById('ex13_1_input' + dynidx).value) != 0) {
         //Récuperer la valeur du champ input généré dynamiquement et en recréer un nouveau
@@ -959,4 +1038,66 @@ function sb_dynentry_13_1(dynidx) {
         my_array13_1[dynidx+1] = parseInt(document.getElementById('ex13_1_input' + dynidx).value);
         add_input13_1();
     }
+}
+
+///////////////////////////// Exercice 1 JS14 /////////////////////////////
+
+// Le but est d'externaliser le code JavaScript dans un fichier .js puis de tester l'intégration de code HTML dans les fonctions Javascript.
+
+//     Copier le code suivant dans votre éditeur de texte préféré.
+
+//     ````
+//     <!DOCTYPE html>
+//     <html>
+//     <head>
+//        <title>Mon 1er script</title>
+//        <script>
+//        alert("Coucou !");
+//        console.log("Ah que Coucou !");
+//        document.write("Coucou beuh !");
+//        </script> 
+//     </head>
+//     <body>
+//        <!-- Ajouter le code Javascript ici pour le titre -->   
+//        <p>Rien à ajouter</p>  
+//     </body>
+//     </html>
+//     ````
+
+// Enregistrer le fichier puis l'ouvrir avec votre navigateur. Observez ce qu'il se passe, y compris dans la console.
+
+//     Créer un fichier JavaScript nommé exercice1.js.
+//     Déplacer le code JavaScript du fichier HTML dans le fichier externe JavaScript et importer ce fichier dans le fichier HTML.
+//     Répéter le titre de la page dans <body> avec l'instruction document.write(). Consultez la documentation sur le site W3Schools. Ajouter du code HTML dans la chaîne de caractères passée en paramètre.
+//     Modifier la fonction alert() pour y passer en paramètre également du code HTML. Que remarquez-vous ?
+//     On aura du code HTML en alert et puis bennn voilà. Je passe cet exercice parce que bon.
+
+///////////////////////////// Exercice 2 JS15 /////////////////////////////
+
+// Votre programme doit générer un nombre aléatoire à l'aide de la fonction Math.random.
+
+// Ecrivez la fonction verif() qui doit vérifier si la saisie de l'utilisateur (dans textBox1) correspond au nombre magique, elle affiche des informations, trop grand, trop petit dans le label1.
+
+// Quand votre programme fonctionne, modifiez-le pour rendre le javascript non intrusif.
+
+// //Event listener
+ex15_2_sb1.addEventListener("click", function(){verif()});
+ex15_2_sb2.addEventListener("click", function(){new_game()});
+
+var mg_nbr = (Math.floor(Math.random(100) * 100)) + 1;
+
+function verif(){
+    if(mg_nbr>parseInt(document.getElementById('ex15_2_rep').value)){
+        document.getElementById('ex15_2_output_saisie').innerHTML = "Trop petit !"
+    }
+    else if(mg_nbr<parseInt(document.getElementById('ex15_2_rep').value)){
+        document.getElementById('ex15_2_output_saisie').innerHTML = "Trop grand !"
+    }
+    else if(mg_nbr==parseInt(document.getElementById('ex15_2_rep').value)){
+        document.getElementById('ex15_2_output_saisie').innerHTML = "Gagné !! Le nombre magique était "+mg_nbr+".";
+    }
+}
+function new_game(){
+    mg_nbr = (Math.floor(Math.random(100) * 100)) + 1;
+    document.getElementById('ex15_2_output_saisie').innerHTML = "";
 }
