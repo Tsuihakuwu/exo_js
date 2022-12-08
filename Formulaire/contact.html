@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,64 +8,67 @@
     <title>Nous contacter</title>
     <link rel="stylesheet" href="form_styles.css">
 </head>
+
 <body>
     <h1 class='center'>JS17 Exercice formulaire</h1>
-    <form class='center' method="POST" action="">
-        <legend><h2>Vos coordonnées :</h2></legend>
-        <div class="txt_red">* Ces zones sont obligatoires pour envoyer le formulaire.</div>
-        
-        <label id="societe" class="lb" for="societe">Société</label>
-        <input type="text" id="societe" name="societe" class="ip" required><div class="txt_red inline">*</div>
-        <br>
+    <form id='myform' method="POST" action="">
+        <fieldset>
+            <legend>
+                <h2>Vos coordonnées :</h2>
+            </legend>
+            <div id='req' class="txt_red">* Ces zones sont obligatoires pour envoyer le formulaire.</div>
 
-        <label id="p_con" class="lb" for="p_con">Personne à contacter : </label>
-        <input type="text" id="p_con" name="p_con" class="ip" required><div class="txt_red inline">*</div>
-        <br>
+            <label id="societe" class="lb" for="societe">Société : </label>
+            <input type="text" id="societe" name="societe" class="ip" required>
+            <div class="txt_red inline">*</div>
 
-        <label id="add_ent" class="lb" for="add_ent">Adresse de l'entreprise : </label>
-        <textarea name="add_ent" id="add_ent" cols="30" rows="10"></textarea>
-        <br>
+            <label id="p_con" class="lb" for="p_con">Personne à contacter : </label>
+            <input type="text" id="p_con" name="p_con" class="ip" required>
+            <div class="txt_red inline">*</div>
 
-        <label id="cp" class="lb" for="cp">Code postal</label>
-        <input type="text" id="cp" name="cp" class="ip" required><div class="txt_red inline">*</div>
-        <br>
+            <label id="add_ent" class="lb" for="add_ent">Adresse de l'entreprise : </label>
+            <textarea name="add_ent" id="add_ent" cols="30" rows="10"></textarea>
 
-        <label id="ville" class="lb" for="ville">Ville</label>
-        <input type="text" id="ville" name="ville" class="ip" required><div class="txt_red inline">*</div>
-        <br>
+            <label id="cp" class="lb" for="cp">Code postal : </label>
+            <input type="text" id="cp" name="cp" class="ip" required>
+            <div class="txt_red inline">*</div>
 
-        <label id="mail" class="lb" for="mail">E-mail : </label>
-        <input type="email" id="mail" name="mail" class="ip" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" required><div class="txt_red inline">*</div>
-        <br>
+            <label id="ville" class="lb" for="ville">Ville : </label>
+            <input type="text" id="ville" name="ville" class="ip" required>
+            <div class="txt_red inline">*</div>
 
-        <label id="phone" class="lb" for="phone">Téléphone : </label>
-        <input type="text" id="phone" name="phone" class="ip">
-        <br>
+            <label id="mail" class="lb" for="mail">E-mail : </label>
+            <input type="email" id="mail" name="mail" class="ip" required>
+            <div class="txt_red inline">*</div>
 
-        <label id="environement" class="lb" for="environement">Sélectionnez l'environnement technique du projet :</label>
-        <textarea name="environement" id="environement" cols="30" rows="10"></textarea>
-        <br>
-        <select id="tech" name="tech" class="ip">
-            <option value="" selected hidden disabled>Choisissez</option>
-            <option value="access">Access</option>
-            <option value="java">Java</option>
-            <option value="delphi">Delphi</option>
-            <option value="windev">Windev</option>
-            <option value="vb">Visual Basic</option>
-            <option value="pb">Power Builder</option>
-            <option value="internet">Internet</option>
-            <option value="intranet">Intranet</option>
-            <option value="nt">Windows NT</option>
-            <option value="unix">Unix</option>
-            <option value="sqlsrv">SQL Server</option>
-            <option value="oracle">Oracle</option>
-            <option value="autre">Autres</option>
-        </select>
-        <br>
+            <label id="phone" class="lb" for="phone">Téléphone : </label>
+            <input type="text" id="phone" name="phone" class="ip_ph">
 
-        <input type="submit"><input type="reset">
+            <label id="lb_environement" class="lb" for="environement">Sélectionnez l'environnement technique du projet :
+            </label>
+            <textarea name="environement" id="environement" cols="30" rows="10"></textarea>
 
+            <select id="tech" name="tech" class="ip">
+                <option value="" selected hidden disabled>Choisissez</option>
+                <option value="Access">Access</option>
+                <option value="Java">Java</option>
+                <option value="Delphi">Delphi</option>
+                <option value="Windev">Windev</option>
+                <option value="Visual Basic">Visual Basic</option>
+                <option value="Power Builder">Power Builder</option>
+                <option value="Internet">Internet</option>
+                <option value="Intranet">Intranet</option>
+                <option value="Windows NT">Windows NT</option>
+                <option value="Unix">Unix</option>
+                <option value="SQL Server">SQL Server</option>
+                <option value="Oracle">Oracle</option>
+                <option value="Autres">Autres</option>
+            </select>
+
+            <input id="sb" class="ip_sb" type="submit"><input id="rs" class="ip_sb" type="reset">
+        </fieldset>
     </form>
     <script src="form_script.js"></script>
 </body>
+
 </html>

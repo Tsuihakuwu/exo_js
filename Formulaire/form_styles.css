@@ -1,11 +1,46 @@
+.center {
+    text-align: center;
+}
+
+#myform {
+    margin-left: auto;
+    margin-right: auto;
+    width:500px;
+}
+fieldset{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .txt_red {
     color:red;
 }
 
-.inline {
-    display: inline;
+.lb {
+    width: 200px;
 }
-
-.center {
-    text-align: center;
+.ip_ph {
+    width: 200px;
+    margin-right:34px;
+    margin-top: 5px;
+}
+.ip {
+    width:200px;
+    margin-top: 5px;
+}
+textarea {
+    width:200px;
+    margin-top: 5px;
+    margin-right: 34px;
+    resize: none;
+}
+#tech {
+    margin-right:249px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+#req {
+    margin-bottom: 20px;
 }
